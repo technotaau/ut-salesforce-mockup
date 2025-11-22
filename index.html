@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Houston's trusted Salesforce partner for non-profits and growing organizations. Fast implementation, NPSP expertise, affordable solutions for NGOs.">
+    <title>UshuTech | Houston Salesforce Consulting for Non-Profits & Organizations</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===========================
+           CSS VARIABLES & RESET
+        =========================== */
+        :root {
+            --primary-navy: #1A365D;
+            --logo-blue: #4169E1;
+            --secondary-blue: #3B82F6;
+            --accent-orange: #F97316;
+            --neutral-slate: #475569;
+            --light-gray: #F8FAFC;
+            --border-gray: #E2E8F0;
+            --white: #FFFFFF;
+            --text-dark: #1E293B;
+            --text-light: #64748B;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+        
+        /* ===========================
+           UTILITY CLASSES
+        =========================== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-light);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+            line-height: 1.7;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--accent-orange);
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            background-color: #EA580C;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+        }
+        
+        .btn-secondary {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--primary-navy);
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border: 2px solid var(--primary-navy);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary-navy);
+            color: var(--white);
+        }
+        
+        /* ===========================
+           HEADER & NAVIGATION
+        =========================== */
+        .header {
+            background-color: var(--white);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 1px solid var(--border-gray);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            color: var(--logo-blue);
+        }
+        
+        .nav-cta {
+            background-color: var(--accent-orange);
+            color: var(--white) !important;
+            padding: 12px 24px;
+            border-radius: 6px;
+        }
+        
+        .nav-cta:hover {
+            background-color: #EA580C;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-dark);
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* ===========================
+           HERO SECTION
+        =========================== */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #2D3748 100%);
+            padding: 140px 0 80px;
+            color: var(--white);
+            margin-top: 90px;
+        }
+        
+        .hero-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(249, 115, 22, 0.2);
+            color: var(--accent-orange);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid var(--accent-orange);
+        }
+        
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 24px;
+        }
+        
+        .hero-subtitle {
+            font-size: 22px;
+            color: #CBD5E0;
+            margin-bottom: 40px;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 50px;
+        }
+        
+        .hero-buttons .btn-secondary {
+            border-color: var(--white);
+            color: var(--white);
+        }
+        
+        .hero-buttons .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary-navy);
+        }
+        
+        .trust-indicators {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+            color: #CBD5E0;
+        }
+        
+        .trust-item i {
+            color: var(--accent-orange);
+            font-size: 20px;
+        }
+        
+        /* ===========================
+           SERVICES OVERVIEW (CRITICAL)
+        =========================== */
+        .services-overview {
+            background-color: var(--white);
+            padding: 80px 0;
+        }
+        
+        .services-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .services-intro h2 {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 16px;
+        }
+        
+        .services-intro p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border: 2px solid var(--border-gray);
+            border-radius: 12px;
+            padding: 36px 28px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .service-card:hover {
+            border-color: var(--logo-blue);
+            box-shadow: 0 12px 32px rgba(65, 105, 225, 0.15);
+            transform: translateY(-4px);
+        }
+        
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, var(--logo-blue), var(--secondary-blue));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 28px;
+            color: var(--white);
+        }
+        
+        .service-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 12px;
+        }
+        
+        .service-card p {
+            font-size: 15px;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .service-features li {
+            font-size: 14px;
+            color: var(--text-dark);
+            padding: 6px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .service-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--logo-blue);
+            font-weight: 700;
+        }
+        
+        .service-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--logo-blue);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: gap 0.3s ease;
+        }
+        
+        .service-link:hover {
+            gap: 12px;
+        }
+        
+        .services-cta {
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .services-cta p {
+            font-size: 18px;
+            color: var(--text-dark);
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+        
+        /* ===========================
+           NON-PROFIT FOCUS SECTION
+        =========================== */
+        .nonprofit-focus {
+            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+            padding: 80px 0;
+        }
+        
+        .nonprofit-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .nonprofit-text h2 {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 20px;
+        }
+        
+        .nonprofit-text p {
+            font-size: 18px;
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        
+        .nonprofit-benefits {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+        
+        .nonprofit-benefits li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            font-size: 16px;
+            color: var(--text-dark);
+        }
+        
+        .nonprofit-benefits i {
+            color: var(--logo-blue);
+            font-size: 20px;
+            margin-top: 2px;
+        }
+        
+        .nonprofit-visual {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        }
+        
+        .nonprofit-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        
+        .stat-box {
+            text-align: center;
+            padding: 24px;
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+            border-radius: 8px;
+        }
+        
+        .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--logo-blue);
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        /* ===========================
+           WHY CHOOSE US SECTION
+        =========================== */
+        .why-choose {
+            background-color: var(--white);
+            padding: 80px 0;
+        }
+        
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        
+        .why-card {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .why-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--light-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 36px;
+            color: var(--logo-blue);
+        }
+        
+        .why-card h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 12px;
+        }
+        
+        .why-card p {
+            font-size: 16px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        /* ===========================
+           INDUSTRIES SECTION
+        =========================== */
+        .industries {
+            background-color: var(--light-gray);
+            padding: 80px 0;
+        }
+        
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+        
+        .industry-card {
+            background-color: var(--white);
+            padding: 32px 24px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .industry-card:hover {
+            border-color: var(--logo-blue);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+        
+        .industry-card.featured {
+            background: linear-gradient(135deg, var(--logo-blue), var(--secondary-blue));
+            color: var(--white);
+        }
+        
+        .industry-card.featured h3 {
+            color: var(--white);
+        }
+        
+        .industry-card.featured p {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .industry-icon {
+            font-size: 40px;
+            margin-bottom: 16px;
+            color: var(--logo-blue);
+        }
+        
+        .industry-card.featured .industry-icon {
+            color: var(--white);
+        }
+        
+        .industry-card h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 8px;
+        }
+        
+        .industry-card p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        /* ===========================
+           TESTIMONIALS SECTION
+        =========================== */
+        .testimonials {
+            background-color: var(--white);
+            padding: 80px 0;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+        
+        .testimonial-card {
+            background-color: var(--light-gray);
+            padding: 40px;
+            border-radius: 12px;
+            position: relative;
+        }
+        
+        .quote-icon {
+            font-size: 48px;
+            color: var(--logo-blue);
+            opacity: 0.2;
+            position: absolute;
+            top: 20px;
+            left: 30px;
+        }
+        
+        .testimonial-text {
+            font-size: 18px;
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin-bottom: 24px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .author-avatar {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--logo-blue), var(--secondary-blue));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: 700;
+            font-size: 20px;
+        }
+        
+        .author-info h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--primary-navy);
+            margin-bottom: 4px;
+        }
+        
+        .author-info p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+        
+        /* ===========================
+           CREDENTIALS SECTION
+        =========================== */
+        .credentials {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #2D3748 100%);
+            padding: 60px 0;
+            color: var(--white);
+        }
+        
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+        
+        .credential-item h3 {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--accent-orange);
+            margin-bottom: 8px;
+        }
+        
+        .credential-item p {
+            font-size: 15px;
+            color: #CBD5E0;
+        }
+        
+        /* ===========================
+           FINAL CTA SECTION
+        =========================== */
+        .final-cta {
+            background-color: var(--light-gray);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--primary-navy);
+            margin-bottom: 20px;
+        }
+        
+        .final-cta p {
+            font-size: 20px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-contact-info {
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 2px solid var(--border-gray);
+        }
+        
+        .cta-contact-info p {
+            font-size: 16px;
+            color: var(--text-dark);
+            margin-bottom: 12px;
+        }
+        
+        .phone-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--logo-blue);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .phone-number:hover {
+            color: var(--accent-orange);
+        }
+        
+        /* ===========================
+           FOOTER
+        =========================== */
+        .footer {
+            background-color: var(--primary-navy);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-about img {
+            height: 50px;
+            margin-bottom: 20px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .footer-about p {
+            color: #CBD5E0;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-orange);
+            transform: translateY(-3px);
+        }
+        
+        .footer-column h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column ul li a {
+            color: #CBD5E0;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent-orange);
+        }
+        
+        .footer-contact p {
+            color: #CBD5E0;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+        }
+        
+        .footer-contact i {
+            color: var(--accent-orange);
+            width: 20px;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: #CBD5E0;
+            font-size: 14px;
+        }
+        
+        .footer-bottom a {
+            color: #CBD5E0;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        
+        .footer-bottom a:hover {
+            color: var(--accent-orange);
+        }
+        
+        /* ===========================
+           RESPONSIVE DESIGN
+        =========================== */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .industries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .nonprofit-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .credentials-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .hero {
+                padding: 100px 0 60px;
+                margin-top: 90px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero-subtitle {
+                font-size: 18px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .hero-buttons .btn-primary,
+            .hero-buttons .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .trust-indicators {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .section-title {
+                font-size: 32px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .credentials-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            
+            .final-cta h2 {
+                font-size: 32px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .cta-buttons .btn-primary,
+            .cta-buttons .btn-secondary {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===========================
+         HEADER & NAVIGATION
+    =========================== -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav-container">
+                <a href="#" class="logo">
+                    <img src="ushutech-logo.png" alt="UshuTech Salesforce Consulting Houston">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Salesforce Services</a></li>
+                    <li><a href="#nonprofits">For Non-Profits</a></li>
+                    <li><a href="#industries">Industries</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact" class="nav-cta">Talk to an Expert</a></li>
+                </ul>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===========================
+         HERO SECTION
+    =========================== -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-heart"></i> Dedicated to Non-Profits & Growing Organizations
+                </div>
+                <h1>Houston's Trusted Salesforce Partner</h1>
+                <p class="hero-subtitle">Fast Implementation. Real Results. Zero Complexity.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">
+                        <i class="fas fa-comments"></i> Talk to a Salesforce Expert
+                    </a>
+                    <a href="#services" class="btn-secondary">
+                        <i class="fas fa-th"></i> View Our Services
+                    </a>
+                </div>
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Salesforce Certified Partner</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Houston-Based Team</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-users"></i>
+                        <span>Non-Profit Specialists</span>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-clock"></i>
+                        <span>6-8 Week Implementation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         SERVICES OVERVIEW (CRITICAL SECTION)
+    =========================== -->
+    <section class="services-overview section" id="services">
+        <div class="container">
+            <div class="services-intro">
+                <h2>Our Salesforce Services</h2>
+                <p>We partner with you to deliver tailored Salesforce solutions that enhance operational efficiency, reduce costs, and ensure seamless integration with your existing technologies.</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service 1: Salesforce for Non-Profits -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Salesforce for Non-Profits</h3>
+                    <p>Specialized NPSP (Nonprofit Success Pack) implementation designed for mission-driven organizations.</p>
+                    <ul class="service-features">
+                        <li>Donor & Grant Management</li>
+                        <li>Volunteer Coordination</li>
+                        <li>Program Management</li>
+                        <li>Fundraising Campaign Tracking</li>
+                        <li>NPSP Configuration & Optimization</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Talk to Expert <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2: Implementation & Configuration -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Implementation & Configuration</h3>
+                    <p>Complete Salesforce setup tailored to your organization's unique processes and workflows.</p>
+                    <ul class="service-features">
+                        <li>Sales Cloud & Service Cloud Setup</li>
+                        <li>Custom Objects & Fields</li>
+                        <li>Workflow Automation</li>
+                        <li>Data Migration</li>
+                        <li>User Training & Documentation</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Talk to Expert <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3: AI & Einstein Integration -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI & Einstein Integration</h3>
+                    <p>Leverage Salesforce AI capabilities to automate processes and gain predictive insights.</p>
+                    <ul class="service-features">
+                        <li>Einstein Lead Scoring</li>
+                        <li>Predictive Analytics</li>
+                        <li>AI-Powered Chatbots</li>
+                        <li>Automated Case Routing</li>
+                        <li>Next-Best-Action Recommendations</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Talk to Expert <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4: Custom Development -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Custom Development & Automation</h3>
+                    <p>Tailored solutions for unique business requirements that extend Salesforce capabilities.</p>
+                    <ul class="service-features">
+                        <li>Lightning Web Components</li>
+                        <li>Apex Code Development</li>
+                        <li>Flow Builder Automation</li>
+                        <li>Custom Dashboards & Reports</li>
+                        <li>Mobile App Customization</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Talk to Expert <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 5: Integration & Data Management -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3>Integration & Data Management</h3>
+                    <p>Connect Salesforce with your existing tools and ensure data quality across systems.</p>
+                    <ul class="service-features">
+                        <li>QuickBooks, Mailchimp, DocuSign Integration</li>
+                        <li>API Development & Management</li>
+                        <li>Data Cleansing & Deduplication</li>
+                        <li>Real-Time Data Synchronization</li>
+                        <li>Third-Party App Configuration</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Talk to Expert <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 6: Managed Services & Support -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>Managed Services & Support</h3>
+                    <p>Ongoing administration and optimization to maximize your Salesforce investment.</p>
+                    <ul class="service-features">
+                        <li>Monthly Administration (10-40 hrs)</li>
+                        <li>User Support & Troubleshooting</li>
+                        <li>Release Update Management</li>
+                        <li>System Optimization</li>
+                        <li>Security & Permission Reviews</li>
+                    </ul>
+                    <a href="#contact" class="service-link">
+                        Talk to Expert <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="services-cta">
+                <p><strong>Need help choosing the right solution?</strong></p>
+                <a href="#contact" class="btn-primary">
+                    <i class="fas fa-phone"></i> Schedule a Free Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         NON-PROFIT FOCUS SECTION
+    =========================== -->
+    <section class="nonprofit-focus section" id="nonprofits">
+        <div class="container">
+            <div class="nonprofit-content">
+                <div class="nonprofit-text">
+                    <h2>Specialized Salesforce Solutions for Non-Profits</h2>
+                    <p>We understand the unique challenges facing non-profit organizations: limited budgets, volunteer coordination, donor management, and grant tracking. Our team has deep expertise in Salesforce Nonprofit Cloud and NPSP implementations.</p>
+                    <ul class="nonprofit-benefits">
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Affordable Solutions:</strong> We help you leverage Salesforce.org discounts and grants for eligible non-profits</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Mission Alignment:</strong> We're committed to supporting organizations making a positive impact in Houston</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>NPSP Expertise:</strong> Certified in Nonprofit Success Pack implementation and optimization</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Grant Management:</strong> Track applications, awards, and reporting requirements in one system</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle"></i>
+                            <span><strong>Volunteer Tracking:</strong> Coordinate volunteers, shifts, and impact measurement seamlessly</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn-primary">Learn More About Non-Profit Solutions</a>
+                </div>
+                <div class="nonprofit-visual">
+                    <h3 style="color: var(--primary-navy); margin-bottom: 24px; text-align: center;">Impact We've Delivered</h3>
+                    <div class="nonprofit-stats">
+                        <div class="stat-box">
+                            <div class="stat-number">40%</div>
+                            <div class="stat-label">Reduction in Admin Time</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">3x</div>
+                            <div class="stat-label">Increase in Donor Retention</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Grant Tracking Accuracy</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">85%</div>
+                            <div class="stat-label">Volunteer Satisfaction</div>
+                        </div>
+                    </div>
+                    <p style="text-align: center; margin-top: 24px; color: var(--text-light); font-size: 14px;">*Results from recent Houston non-profit implementations</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         WHY CHOOSE US SECTION
+    =========================== -->
+    <section class="why-choose section">
+        <div class="container">
+            <h2 class="section-title">Why Houston Organizations Choose UshuTech</h2>
+            <p class="section-subtitle">We view our relationship with clients as a partnership and remain flexible to meet your specific needs, ensuring a tailored and collaborative approach.</p>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Partnership Approach</h3>
+                    <p>We're not just consultants—we're your long-term partners dedicated to your success. We collaborate with you daily to ensure lasting business value.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Fast Implementation</h3>
+                    <p>Most projects go live in 6-8 weeks, not months. We focus on delivering quick wins and immediate ROI for your organization.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Houston-Based Team</h3>
+                    <p>We're local, accessible, and understand the Houston business landscape. Meet us in person, not just on Zoom calls.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3>Certified Experts</h3>
+                    <p>Our team holds multiple Salesforce certifications across Sales Cloud, Service Cloud, NPSP, and development specializations.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Tailored Solutions</h3>
+                    <p>Every implementation is customized to your specific business needs, processes, and goals—not a one-size-fits-all template.</p>
+                </div>
+                <div class="why-card">
+                    <div class="why-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Proven Results</h3>
+                    <p>We measure success by your outcomes—increased efficiency, cost reduction, and business growth, not just hours billed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         INDUSTRIES SECTION
+    =========================== -->
+    <section class="industries section" id="industries">
+        <div class="container">
+            <h2 class="section-title">Industries We Serve</h2>
+            <p class="section-subtitle">Deep expertise across multiple sectors with specialized focus on non-profit organizations.</p>
+            <div class="industries-grid">
+                <div class="industry-card featured">
+                    <div class="industry-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                    <h3>Non-Profits & NGOs</h3>
+                    <p>NPSP, donor management, grant tracking, volunteer coordination</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon"><i class="fas fa-heartbeat"></i></div>
+                    <h3>Healthcare</h3>
+                    <p>Patient management, HIPAA compliance, referral tracking</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon"><i class="fas fa-chart-pie"></i></div>
+                    <h3>Financial Services</h3>
+                    <p>Client portfolios, compliance, wealth management</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon"><i class="fas fa-industry"></i></div>
+                    <h3>Manufacturing</h3>
+                    <p>Order management, dealer networks, CPQ solutions</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon"><i class="fas fa-briefcase"></i></div>
+                    <h3>Professional Services</h3>
+                    <p>Project tracking, time & billing, resource management</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon"><i class="fas fa-shopping-cart"></i></div>
+                    <h3>Retail & E-commerce</h3>
+                    <p>Omnichannel commerce, loyalty programs, inventory</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Education</h3>
+                    <p>Student recruitment, alumni relations, fundraising</p>
+                </div>
+                <div class="industry-card">
+                    <div class="industry-icon"><i class="fas fa-laptop-code"></i></div>
+                    <h3>Technology & SaaS</h3>
+                    <p>Sales automation, customer success, subscriptions</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         TESTIMONIALS SECTION
+    =========================== -->
+    <section class="testimonials section">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <p class="section-subtitle">Real results from Houston organizations who trust UshuTech.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="testimonial-text">"UshuTech transformed how we manage our donors and volunteers. The NPSP implementation was seamless, and their team truly understood our mission. We've seen a 40% reduction in administrative time."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">NP</div>
+                        <div class="author-info">
+                            <h4>[Non-Profit Director Name]</h4>
+                            <p>[Houston Non-Profit Organization]</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p class="testimonial-text">"Unlike other consultants, UshuTech explained everything in plain English and delivered exactly what we needed in 7 weeks. Our sales team is finally using the CRM consistently."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">BL</div>
+                        <div class="author-info">
+                            <h4>[Business Leader Name]</h4>
+                            <p>VP Sales, [Houston Company]</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         CREDENTIALS SECTION
+    =========================== -->
+    <section class="credentials">
+        <div class="container">
+            <div class="credentials-grid">
+                <div class="credential-item">
+                    <h3>100+</h3>
+                    <p>Salesforce Projects Delivered</p>
+                </div>
+                <div class="credential-item">
+                    <h3>15+</h3>
+                    <p>Houston Non-Profits Served</p>
+                </div>
+                <div class="credential-item">
+                    <h3>98%</h3>
+                    <p>Client Satisfaction Rate</p>
+                </div>
+                <div class="credential-item">
+                    <h3>6-8</h3>
+                    <p>Weeks Average Implementation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         FINAL CTA SECTION
+    =========================== -->
+    <section class="final-cta section" id="contact">
+        <div class="container">
+            <h2>Ready to Transform Your Organization with Salesforce?</h2>
+            <p>Schedule a free consultation with our Salesforce experts. No pressure, no sales pitch—just honest conversation about what's possible for your organization.</p>
+            <div class="cta-buttons">
+                <a href="mailto:hello@ushu-tech.com" class="btn-primary">
+                    <i class="fas fa-envelope"></i> Email Us
+                </a>
+                <a href="#" class="btn-secondary">
+                    <i class="fas fa-calendar"></i> Schedule Consultation
+                </a>
+            </div>
+            <div class="cta-contact-info">
+                <p><strong>Or call us directly:</strong></p>
+                <a href="tel:+1234567890" class="phone-number">
+                    <i class="fas fa-phone"></i> (XXX) XXX-XXXX
+                </a>
+                <p style="margin-top: 20px; font-size: 14px;">Monday-Friday: 9:00 AM - 6:00 PM CST</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         FOOTER
+    =========================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <img src="ushutech-logo.png" alt="UshuTech">
+                    <p>Houston's Salesforce Partner for Non-Profits and Growing Organizations</p>
+                    <p style="font-size: 14px;">We partner with you to deliver Salesforce solutions that enhance efficiency, reduce costs, and drive meaningful results.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Salesforce for Non-Profits</a></li>
+                        <li><a href="#services">Implementation</a></li>
+                        <li><a href="#services">AI & Einstein</a></li>
+                        <li><a href="#services">Custom Development</a></li>
+                        <li><a href="#services">Integration</a></li>
+                        <li><a href="#services">Managed Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#industries">Industries</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column footer-contact">
+                    <h4>Get In Touch</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Houston, TX [Address - Client to provide]</p>
+                    <p><i class="fas fa-phone"></i> [Phone - Client to provide]</p>
+                    <p><i class="fas fa-envelope"></i> hello@ushu-tech.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9 AM - 6 PM CST</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 UshuTech. All Rights Reserved. | 
+                   <a href="#">Privacy Policy</a> | 
+                   <a href="#">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
