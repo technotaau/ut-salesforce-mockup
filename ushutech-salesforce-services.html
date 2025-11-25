@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Expert Salesforce implementation, AI integration, and custom development in Houston. Sales Cloud, Service Cloud, NPSP for non-profits. 6-8 week delivery.">
+    <title>Salesforce Services | Implementation & Consulting | UshuTech Houston</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===========================
+           CSS VARIABLES & RESET
+        =========================== */
+        :root {
+            --primary-navy: #1A365D;
+            --logo-blue: #4169E1;
+            --secondary-blue: #3B82F6;
+            --accent-orange: #F97316;
+            --neutral-slate: #475569;
+            --light-gray: #F8FAFC;
+            --border-gray: #E2E8F0;
+            --white: #FFFFFF;
+            --text-dark: #1E293B;
+            --text-light: #64748B;
+            --success-green: #10B981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: var(--white);
+        }
+        
+        /* ===========================
+           UTILITY CLASSES
+        =========================== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 16px;
+            text-align: center;
+        }
+        
+        .section-subtitle {
+            font-size: 18px;
+            color: var(--text-light);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            line-height: 1.7;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--accent-orange);
+            color: var(--white);
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-primary:hover {
+            background-color: #EA580C;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(249, 115, 22, 0.3);
+        }
+        
+        .btn-secondary {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--primary-navy);
+            padding: 16px 32px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border: 2px solid var(--primary-navy);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--primary-navy);
+            color: var(--white);
+        }
+        
+        /* ===========================
+           HEADER & NAVIGATION
+        =========================== */
+        .header {
+            background-color: var(--white);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-bottom: 1px solid var(--border-gray);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .nav-menu a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--logo-blue);
+        }
+        
+        .nav-cta {
+            background-color: var(--accent-orange);
+            color: var(--white) !important;
+            padding: 12px 24px;
+            border-radius: 6px;
+        }
+        
+        .nav-cta:hover {
+            background-color: #EA580C;
+        }
+        
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-dark);
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* ===========================
+           PAGE HERO
+        =========================== */
+        .page-hero {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #2D3748 100%);
+            padding: 140px 0 80px;
+            color: var(--white);
+            margin-top: 90px;
+            text-align: center;
+        }
+        
+        .breadcrumb {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #CBD5E0;
+            margin-bottom: 24px;
+        }
+        
+        .breadcrumb a {
+            color: #CBD5E0;
+            text-decoration: none;
+        }
+        
+        .breadcrumb a:hover {
+            color: var(--accent-orange);
+        }
+        
+        .page-hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.15;
+        }
+        
+        .page-hero p {
+            font-size: 20px;
+            color: #CBD5E0;
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero-stat {
+            text-align: center;
+        }
+        
+        .hero-stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--accent-orange);
+            margin-bottom: 8px;
+        }
+        
+        .hero-stat-label {
+            font-size: 14px;
+            color: #CBD5E0;
+        }
+        
+        /* ===========================
+           SERVICE DETAILS SECTIONS
+        =========================== */
+        .service-detail {
+            padding: 80px 0;
+            border-bottom: 1px solid var(--border-gray);
+        }
+        
+        .service-detail:last-of-type {
+            border-bottom: none;
+        }
+        
+        .service-detail:nth-child(even) {
+            background-color: var(--light-gray);
+        }
+        
+        .service-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .service-text h2 {
+            font-size: 38px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 16px;
+        }
+        
+        .service-text h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--primary-navy);
+            margin: 32px 0 16px;
+        }
+        
+        .service-text p {
+            font-size: 17px;
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+        
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 10px 0;
+            font-size: 16px;
+            color: var(--text-dark);
+        }
+        
+        .feature-list i {
+            color: var(--success-green);
+            font-size: 20px;
+            margin-top: 2px;
+        }
+        
+        .service-visual {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        }
+        
+        .visual-placeholder {
+            background: linear-gradient(135deg, var(--logo-blue) 0%, var(--secondary-blue) 100%);
+            border-radius: 8px;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 18px;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .pricing-box {
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+            border: 2px solid var(--border-gray);
+            border-radius: 12px;
+            padding: 32px;
+            margin-top: 24px;
+        }
+        
+        .pricing-box h4 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 16px;
+        }
+        
+        .price {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--logo-blue);
+            margin-bottom: 8px;
+        }
+        
+        .price-note {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+        
+        .timeline-badge {
+            display: inline-block;
+            background-color: var(--success-green);
+            color: var(--white);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+        
+        /* ===========================
+           PROCESS SECTION
+        =========================== */
+        .process-section {
+            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+            padding: 80px 0;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+        
+        .process-step {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 32px 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+        
+        .step-number {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--logo-blue), var(--secondary-blue));
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .process-step h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 8px;
+        }
+        
+        .process-step .timeline {
+            font-size: 14px;
+            color: var(--accent-orange);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .process-step p {
+            font-size: 15px;
+            color: var(--text-dark);
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+        
+        .process-deliverable {
+            font-size: 14px;
+            color: var(--primary-navy);
+            font-weight: 600;
+            padding-top: 16px;
+            border-top: 2px solid var(--border-gray);
+        }
+        
+        /* ===========================
+           COMPARISON TABLE
+        =========================== */
+        .comparison-section {
+            background-color: var(--white);
+            padding: 80px 0;
+        }
+        
+        .comparison-table {
+            background-color: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        }
+        
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary-navy);
+            color: var(--white);
+            padding: 20px;
+            text-align: left;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-gray);
+            font-size: 15px;
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .comparison-table tr:hover {
+            background-color: var(--light-gray);
+        }
+        
+        .check-icon {
+            color: var(--success-green);
+            font-size: 20px;
+        }
+        
+        .cross-icon {
+            color: #EF4444;
+            font-size: 20px;
+        }
+        
+        /* ===========================
+           FAQ SECTION
+        =========================== */
+        .faq-section {
+            background-color: var(--light-gray);
+            padding: 80px 0;
+        }
+        
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-item h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 12px;
+        }
+        
+        .faq-item p {
+            font-size: 16px;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+        
+        /* ===========================
+           CTA SECTION
+        =========================== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-navy) 0%, #2D3748 100%);
+            padding: 100px 0;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .cta-section h2 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 20px;
+            color: #CBD5E0;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-buttons .btn-secondary {
+            border-color: var(--white);
+            color: var(--white);
+        }
+        
+        .cta-buttons .btn-secondary:hover {
+            background-color: var(--white);
+            color: var(--primary-navy);
+        }
+        
+        /* ===========================
+           FOOTER
+        =========================== */
+        .footer {
+            background-color: var(--primary-navy);
+            color: var(--white);
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-about img {
+            height: 50px;
+            margin-bottom: 20px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .footer-about p {
+            color: #CBD5E0;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent-orange);
+            transform: translateY(-3px);
+        }
+        
+        .footer-column h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column ul li a {
+            color: #CBD5E0;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--accent-orange);
+        }
+        
+        .footer-contact p {
+            color: #CBD5E0;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 15px;
+        }
+        
+        .footer-contact i {
+            color: var(--accent-orange);
+            width: 20px;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 30px;
+            text-align: center;
+            color: #CBD5E0;
+            font-size: 14px;
+        }
+        
+        .footer-bottom a {
+            color: #CBD5E0;
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        
+        .footer-bottom a:hover {
+            color: var(--accent-orange);
+        }
+        
+        /* ===========================
+           RESPONSIVE DESIGN
+        =========================== */
+        @media (max-width: 1024px) {
+            .service-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+            
+            .page-hero {
+                padding: 100px 0 60px;
+            }
+            
+            .page-hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero-stats {
+                flex-direction: column;
+                gap: 24px;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .comparison-table {
+                overflow-x: auto;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-section h2 {
+                font-size: 32px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===========================
+         HEADER & NAVIGATION
+    =========================== -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav-container">
+                <a href="ushutech-homepage-redesign.html" class="logo">
+                    <img src="ushutech-logo.png" alt="UshuTech Salesforce Consulting Houston">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="ushutech-homepage-redesign.html">Home</a></li>
+                    <li><a href="#" class="active">Salesforce Services</a></li>
+                    <li><a href="#nonprofits">For Non-Profits</a></li>
+                    <li><a href="#industries">Industries</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact" class="nav-cta">Talk to an Expert</a></li>
+                </ul>
+                <button class="mobile-menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===========================
+         PAGE HERO
+    =========================== -->
+    <section class="page-hero">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="ushutech-homepage-redesign.html">Home</a>
+                <span>/</span>
+                <span>Salesforce Services</span>
+            </div>
+            <h1>Salesforce Solutions Built for Growing Organizations</h1>
+            <p>We eliminate the complexity and deliver systems that your team will actually use—in weeks, not months.</p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">6-8</div>
+                    <div class="hero-stat-label">Week Implementation</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">100+</div>
+                    <div class="hero-stat-label">Projects Delivered</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">98%</div>
+                    <div class="hero-stat-label">Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         SERVICE 1: SALESFORCE FOR NON-PROFITS
+    =========================== -->
+    <section class="service-detail">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-text">
+                    <h2><i class="fas fa-hand-holding-heart" style="color: var(--logo-blue); margin-right: 12px;"></i> Salesforce for Non-Profits</h2>
+                    <p>Specialized NPSP (Nonprofit Success Pack) implementation designed for mission-driven organizations. We understand the unique challenges facing non-profits and deliver affordable, powerful solutions.</p>
+                    
+                    <h3>What We Do:</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> <span>Complete NPSP configuration and optimization</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Donor and grant management systems</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Volunteer coordination and tracking</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Fundraising campaign management</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Program management and impact tracking</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Salesforce.org discount navigation</span></li>
+                    </ul>
+                    
+                    <h3>Who It's For:</h3>
+                    <p>Non-profit organizations, NGOs, charities, foundations, and mission-driven organizations looking to streamline operations, track donors, manage volunteers, and measure impact effectively.</p>
+                    
+                    <a href="#contact" class="btn-primary">Request Non-Profit Consultation</a>
+                </div>
+                <div class="service-visual">
+                    <div class="visual-placeholder">
+                        <div>
+                            <i class="fas fa-hand-holding-heart" style="font-size: 80px; margin-bottom: 20px;"></i>
+                            <p>NPSP Dashboard Preview<br>Donor & Grant Management Interface</p>
+                        </div>
+                    </div>
+                    <div class="pricing-box">
+                        <span class="timeline-badge">8-10 Weeks</span>
+                        <h4>Investment</h4>
+                        <div class="price">Starting at $12,000</div>
+                        <p class="price-note">For NPSP implementation including donor management, volunteer tracking, and program management.</p>
+                        <p style="font-size: 14px; color: var(--text-dark); line-height: 1.6;"><strong>Includes:</strong> Discovery, NPSP configuration, data migration, training, 30 days support</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         SERVICE 2: IMPLEMENTATION & CONFIGURATION
+    =========================== -->
+    <section class="service-detail">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-visual">
+                    <div class="visual-placeholder">
+                        <div>
+                            <i class="fas fa-cogs" style="font-size: 80px; margin-bottom: 20px;"></i>
+                            <p>Sales Cloud Dashboard<br>Pipeline Management Interface</p>
+                        </div>
+                    </div>
+                    <div class="pricing-box">
+                        <span class="timeline-badge">6-8 Weeks</span>
+                        <h4>Investment</h4>
+                        <div class="price">Starting at $8,500</div>
+                        <p class="price-note">For Sales Cloud or Service Cloud implementation with custom configuration.</p>
+                        <p style="font-size: 14px; color: var(--text-dark); line-height: 1.6;"><strong>Includes:</strong> Setup, configuration, workflow automation, data migration, user training</p>
+                    </div>
+                </div>
+                <div class="service-text">
+                    <h2><i class="fas fa-cogs" style="color: var(--logo-blue); margin-right: 12px;"></i> Implementation & Configuration</h2>
+                    <p>Complete Salesforce setup tailored to your organization's unique processes and workflows. We build systems that match how your team works—not force you into generic templates.</p>
+                    
+                    <h3>What We Do:</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> <span>New Salesforce setup (Sales Cloud, Service Cloud, or both)</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Business process mapping and workflow design</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Custom objects, fields, and page layouts</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Permission sets and security configuration</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Data import from existing systems</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Comprehensive user training and documentation</span></li>
+                    </ul>
+                    
+                    <h3>Who It's For:</h3>
+                    <p>Companies moving from spreadsheets, outgrowing basic CRMs, or needing a fresh Salesforce start after a failed implementation.</p>
+                    
+                    <h3>Typical Results:</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-arrow-up" style="color: var(--success-green);"></i> <span>40% reduction in manual data entry time</span></li>
+                        <li><i class="fas fa-arrow-up" style="color: var(--success-green);"></i> <span>25% faster lead-to-opportunity conversion</span></li>
+                        <li><i class="fas fa-arrow-up" style="color: var(--success-green);"></i> <span>Complete visibility into sales pipeline</span></li>
+                    </ul>
+                    
+                    <a href="#contact" class="btn-primary">Request Implementation Proposal</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         SERVICE 3: AI & EINSTEIN INTEGRATION
+    =========================== -->
+    <section class="service-detail">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-text">
+                    <h2><i class="fas fa-brain" style="color: var(--logo-blue); margin-right: 12px;"></i> AI & Einstein Integration</h2>
+                    <p>Leverage Salesforce AI capabilities to automate processes, predict outcomes, and gain actionable insights that drive business growth.</p>
+                    
+                    <h3>What We Do:</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> <span>Einstein Lead Scoring setup and training</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Predictive analytics for sales forecasting</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>AI-powered chatbots for customer service</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Automated email responses and case routing</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Next-best-action recommendations</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Opportunity insights and win/loss analysis</span></li>
+                    </ul>
+                    
+                    <h3>Who It's For:</h3>
+                    <p>Businesses with significant lead volume or service requests looking to scale without adding headcount. Companies wanting to prioritize leads based on likelihood to close.</p>
+                    
+                    <h3>Typical Results:</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-arrow-up" style="color: var(--success-green);"></i> <span>35% improvement in lead conversion rates</span></li>
+                        <li><i class="fas fa-arrow-up" style="color: var(--success-green);"></i> <span>50% reduction in lead response time</span></li>
+                        <li><i class="fas fa-arrow-up" style="color: var(--success-green);"></i> <span>20% increase in sales forecast accuracy</span></li>
+                    </ul>
+                    
+                    <a href="#contact" class="btn-primary">Request AI Consultation</a>
+                </div>
+                <div class="service-visual">
+                    <div class="visual-placeholder">
+                        <div>
+                            <i class="fas fa-brain" style="font-size: 80px; margin-bottom: 20px;"></i>
+                            <p>Einstein Analytics Dashboard<br>AI-Powered Insights</p>
+                        </div>
+                    </div>
+                    <div class="pricing-box">
+                        <span class="timeline-badge">4-6 Weeks</span>
+                        <h4>Investment</h4>
+                        <div class="price">Starting at $6,000</div>
+                        <p class="price-note">For Einstein feature implementation and AI model training.</p>
+                        <p style="font-size: 14px; color: var(--text-dark); line-height: 1.6;"><strong>Includes:</strong> AI readiness assessment, Einstein configuration, model training, ROI tracking</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         SERVICE 4: CUSTOM DEVELOPMENT
+    =========================== -->
+    <section class="service-detail">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-visual">
+                    <div class="visual-placeholder">
+                        <div>
+                            <i class="fas fa-code" style="font-size: 80px; margin-bottom: 20px;"></i>
+                            <p>Custom Lightning Component<br>Apex Development Interface</p>
+                        </div>
+                    </div>
+                    <div class="pricing-box">
+                        <span class="timeline-badge">3-12 Weeks</span>
+                        <h4>Investment</h4>
+                        <div class="price">Starting at $10,000</div>
+                        <p class="price-note">Varies by complexity. Custom development for unique business requirements.</p>
+                        <p style="font-size: 14px; color: var(--text-dark); line-height: 1.6;"><strong>Includes:</strong> Technical design, development, testing, deployment, documentation</p>
+                    </div>
+                </div>
+                <div class="service-text">
+                    <h2><i class="fas fa-code" style="color: var(--logo-blue); margin-right: 12px;"></i> Custom Development & Automation</h2>
+                    <p>Tailored solutions for unique business requirements that extend Salesforce capabilities beyond out-of-the-box features.</p>
+                    
+                    <h3>What We Do:</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> <span>Custom Lightning Web Components</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Apex code development for complex business logic</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Process automation with Flow Builder</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Custom reports and dashboards</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Validation rules and approval processes</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Mobile app customization</span></li>
+                    </ul>
+                    
+                    <h3>Who It's For:</h3>
+                    <p>Companies with unique processes that out-of-the-box Salesforce can't handle. Businesses needing advanced automation or custom functionality.</p>
+                    
+                    <h3>Typical Results:</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-arrow-up" style="color: var(--success-green);"></i> <span>Complex workflows fully automated</span></li>
+                        <li><i class="fas fa-arrow-up" style="color: var(--success-green);"></i> <span>Custom dashboards showing exactly what you need</span></li>
+                        <li><i class="fas fa-arrow-up" style="color: var(--success-green);"></i> <span>Unique business processes supported seamlessly</span></li>
+                    </ul>
+                    
+                    <a href="#contact" class="btn-primary">Request Development Proposal</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         SERVICE 5: INTEGRATION
+    =========================== -->
+    <section class="service-detail">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-text">
+                    <h2><i class="fas fa-link" style="color: var(--logo-blue); margin-right: 12px;"></i> Integration & Data Management</h2>
+                    <p>Connect Salesforce with your existing tools and ensure data quality across all systems. Make Salesforce your single source of truth.</p>
+                    
+                    <h3>What We Do:</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> <span>Connect to QuickBooks, Mailchimp, DocuSign, ERP systems</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>API development and management</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Data cleansing and deduplication</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Real-time data synchronization</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Third-party app configuration (AppExchange)</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Legacy system data migration</span></li>
+                    </ul>
+                    
+                    <h3>Common Integrations:</h3>
+                    <p><strong>Accounting:</strong> QuickBooks, Xero, NetSuite</p>
+                    <p><strong>Marketing:</strong> Mailchimp, HubSpot, Constant Contact</p>
+                    <p><strong>E-signature:</strong> DocuSign, Adobe Sign</p>
+                    <p><strong>Communication:</strong> Microsoft Teams, Slack, Zoom</p>
+                    <p><strong>E-commerce:</strong> Shopify, WooCommerce, Magento</p>
+                    
+                    <h3>Typical Results:</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-arrow-up" style="color: var(--success-green);"></i> <span>Eliminated double data entry across systems</span></li>
+                        <li><i class="fas fa-arrow-up" style="color: var(--success-green);"></i> <span>Real-time order/invoice sync with accounting</span></li>
+                        <li><i class="fas fa-arrow-up" style="color: var(--success-green);"></i> <span>95%+ data accuracy after cleanup</span></li>
+                    </ul>
+                    
+                    <a href="#contact" class="btn-primary">Request Integration Proposal</a>
+                </div>
+                <div class="service-visual">
+                    <div class="visual-placeholder">
+                        <div>
+                            <i class="fas fa-link" style="font-size: 80px; margin-bottom: 20px;"></i>
+                            <p>Integration Architecture<br>Multi-System Connection Diagram</p>
+                        </div>
+                    </div>
+                    <div class="pricing-box">
+                        <span class="timeline-badge">4-8 Weeks</span>
+                        <h4>Investment</h4>
+                        <div class="price">Starting at $5,500</div>
+                        <p class="price-note">For standard integrations. Complex custom APIs may vary.</p>
+                        <p style="font-size: 14px; color: var(--text-dark); line-height: 1.6;"><strong>Includes:</strong> Integration mapping, API development, testing, error handling setup</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         SERVICE 6: MANAGED SERVICES
+    =========================== -->
+    <section class="service-detail">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-visual">
+                    <div class="visual-placeholder">
+                        <div>
+                            <i class="fas fa-headset" style="font-size: 80px; margin-bottom: 20px;"></i>
+                            <p>Ongoing Support Dashboard<br>System Health Monitoring</p>
+                        </div>
+                    </div>
+                    <div class="pricing-box">
+                        <span class="timeline-badge">Ongoing</span>
+                        <h4>Investment</h4>
+                        <div class="price">$1,200-$4,000</div>
+                        <p class="price-note">Per month. Month-to-month, no long-term contract required.</p>
+                        <p style="font-size: 14px; color: var(--text-dark); line-height: 1.6;"><strong>Tiers:</strong> Essential (10 hrs), Standard (20 hrs), Premium (40 hrs) per month</p>
+                    </div>
+                </div>
+                <div class="service-text">
+                    <h2><i class="fas fa-headset" style="color: var(--logo-blue); margin-right: 12px;"></i> Managed Services & Support</h2>
+                    <p>Ongoing administration and optimization to maximize your Salesforce investment without hiring a full-time admin.</p>
+                    
+                    <h3>What We Do:</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> <span>Monthly Salesforce administration (10-40 hours/month)</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>User support and troubleshooting</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>System optimization and enhancement</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Release update management (3x per year)</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>Security and permission reviews</span></li>
+                        <li><i class="fas fa-check-circle"></i> <span>New feature implementation</span></li>
+                    </ul>
+                    
+                    <h3>Service Tiers:</h3>
+                    <p><strong>Essential Support:</strong> 10 hours/month | $1,200/month<br>
+                    Best for: Small teams (5-15 users)</p>
+                    
+                    <p><strong>Standard Support:</strong> 20 hours/month | $2,200/month<br>
+                    Best for: Mid-size teams (15-50 users)</p>
+                    
+                    <p><strong>Premium Support:</strong> 40 hours/month | $4,000/month<br>
+                    Best for: Large teams (50+ users) or complex orgs</p>
+                    
+                    <h3>What's Included:</h3>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-arrow-right" style="color: var(--logo-blue);"></i> <span>Dedicated Salesforce Administrator</span></li>
+                        <li><i class="fas fa-arrow-right" style="color: var(--logo-blue);"></i> <span>2-4 hour response time for issues</span></li>
+                        <li><i class="fas fa-arrow-right" style="color: var(--logo-blue);"></i> <span>Monthly optimization report</span></li>
+                        <li><i class="fas fa-arrow-right" style="color: var(--logo-blue);"></i> <span>Quarterly system health check</span></li>
+                    </ul>
+                    
+                    <a href="#contact" class="btn-primary">Request Support Proposal</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         PROCESS SECTION
+    =========================== -->
+    <section class="process-section">
+        <div class="container">
+            <h2 class="section-title">How We Deliver Salesforce Projects</h2>
+            <p class="section-subtitle">Every implementation follows our proven methodology with complete transparency and weekly communication.</p>
+            
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery</h3>
+                    <p class="timeline">Week 1</p>
+                    <p>Stakeholder interviews, process mapping workshops, requirements documentation, and project timeline creation.</p>
+                    <p class="process-deliverable"><strong>Deliverable:</strong> Strategy Document + Timeline</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Design</h3>
+                    <p class="timeline">Weeks 2-3</p>
+                    <p>Sandbox environment setup, custom field creation, workflow automation build, dashboard and report creation.</p>
+                    <p class="process-deliverable"><strong>Deliverable:</strong> Sandbox Demo</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Deploy</h3>
+                    <p class="timeline">Weeks 4-6</p>
+                    <p>User acceptance testing, data migration, administrator training, end-user training sessions, and go-live.</p>
+                    <p class="process-deliverable"><strong>Deliverable:</strong> Live System</p>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Optimize</h3>
+                    <p class="timeline">Ongoing</p>
+                    <p>Production deployment monitoring, post-launch support, system optimization, and 30-day check-in meeting.</p>
+                    <p class="process-deliverable"><strong>Deliverable:</strong> Monthly Reports</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <h3 style="font-size: 24px; color: var(--primary-navy); margin-bottom: 20px;">What's Included in Every Project</h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 900px; margin: 0 auto;">
+                    <div style="padding: 20px; background: var(--white); border-radius: 8px;">
+                        <i class="fas fa-calendar-check" style="font-size: 32px; color: var(--logo-blue); margin-bottom: 12px;"></i>
+                        <p style="font-size: 15px; color: var(--text-dark);">Weekly status calls with your team</p>
+                    </div>
+                    <div style="padding: 20px; background: var(--white); border-radius: 8px;">
+                        <i class="fas fa-user-tie" style="font-size: 32px; color: var(--logo-blue); margin-bottom: 12px;"></i>
+                        <p style="font-size: 15px; color: var(--text-dark);">Dedicated project manager</p>
+                    </div>
+                    <div style="padding: 20px; background: var(--white); border-radius: 8px;">
+                        <i class="fas fa-flask" style="font-size: 32px; color: var(--logo-blue); margin-bottom: 12px;"></i>
+                        <p style="font-size: 15px; color: var(--text-dark);">Sandbox for safe testing</p>
+                    </div>
+                    <div style="padding: 20px; background: var(--white); border-radius: 8px;">
+                        <i class="fas fa-book" style="font-size: 32px; color: var(--logo-blue); margin-bottom: 12px;"></i>
+                        <p style="font-size: 15px; color: var(--text-dark);">Comprehensive documentation</p>
+                    </div>
+                    <div style="padding: 20px; background: var(--white); border-radius: 8px;">
+                        <i class="fas fa-life-ring" style="font-size: 32px; color: var(--logo-blue); margin-bottom: 12px;"></i>
+                        <p style="font-size: 15px; color: var(--text-dark);">30-day post-launch support</p>
+                    </div>
+                    <div style="padding: 20px; background: var(--white); border-radius: 8px;">
+                        <i class="fas fa-video" style="font-size: 32px; color: var(--logo-blue); margin-bottom: 12px;"></i>
+                        <p style="font-size: 15px; color: var(--text-dark);">Training recordings</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         FAQ SECTION
+    =========================== -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <p class="section-subtitle">Common questions about our Salesforce services and implementation process.</p>
+            
+            <div class="faq-container">
+                <div class="faq-item">
+                    <h3>Do we need to buy Salesforce licenses before starting?</h3>
+                    <p>No. We'll help you determine the right licenses for your team size and needs, then handle procurement as part of our setup process. We can also help you understand Salesforce pricing and negotiate the best deal.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What if our team has never used Salesforce?</h3>
+                    <p>We provide comprehensive training tailored to each role—sales reps, managers, and admins. Most teams are confident users within 2 weeks. All training is recorded for future reference and new hires.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Can you integrate Salesforce with our existing tools?</h3>
+                    <p>Yes. We routinely integrate with QuickBooks, Mailchimp, DocuSign, Microsoft 365, Google Workspace, and 200+ other platforms. If it has an API, we can connect it.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What happens after go-live?</h3>
+                    <p>Every implementation includes 30 days of post-launch support for troubleshooting and adjustments. After that, we offer ongoing managed services or can train your team to manage Salesforce internally.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>How is Salesforce priced?</h3>
+                    <p>Salesforce charges per user per month. Sales Cloud and Service Cloud start at $25/user/month (annual contract). We help you choose the right edition and features for your budget. Non-profits may qualify for significant discounts through Salesforce.org.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>What if we already have Salesforce but it's not working?</h3>
+                    <p>We offer Salesforce rescue services—auditing your current setup, identifying issues, and rebuilding or optimizing as needed. Many of our clients come to us after failed DIY implementations.</p>
+                </div>
+                
+                <div class="faq-item">
+                    <h3>Do you work with companies outside Houston?</h3>
+                    <p>Yes. While we're based in Houston and specialize in serving Texas organizations, we work with clients across the United States remotely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         CTA SECTION
+    =========================== -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Ready to Transform Your Organization with Salesforce?</h2>
+            <p>Schedule a free consultation with our Salesforce experts. We'll discuss your goals, challenges, and create a custom solution that fits your needs and budget.</p>
+            <div class="cta-buttons">
+                <a href="mailto:hello@ushu-tech.com" class="btn-primary">
+                    <i class="fas fa-envelope"></i> Email Us
+                </a>
+                <a href="#" class="btn-secondary">
+                    <i class="fas fa-calendar"></i> Schedule Consultation
+                </a>
+                <a href="tel:+1234567890" class="btn-secondary">
+                    <i class="fas fa-phone"></i> Call (XXX) XXX-XXXX
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===========================
+         FOOTER
+    =========================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <img src="ushutech-logo.png" alt="UshuTech">
+                    <p>Houston's Salesforce Partner for Non-Profits and Growing Organizations</p>
+                    <p style="font-size: 14px;">We partner with you to deliver Salesforce solutions that enhance efficiency, reduce costs, and drive meaningful results.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#nonprofits">Salesforce for Non-Profits</a></li>
+                        <li><a href="#">Implementation</a></li>
+                        <li><a href="#">AI & Einstein</a></li>
+                        <li><a href="#">Custom Development</a></li>
+                        <li><a href="#">Integration</a></li>
+                        <li><a href="#">Managed Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="ushutech-homepage-redesign.html">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#industries">Industries</a></li>
+                        <li><a href="#">Success Stories</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column footer-contact">
+                    <h4>Get In Touch</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Houston, TX [Address]</p>
+                    <p><i class="fas fa-phone"></i> [Phone]</p>
+                    <p><i class="fas fa-envelope"></i> hello@ushu-tech.com</p>
+                    <p><i class="fas fa-clock"></i> Mon-Fri: 9 AM - 6 PM CST</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 UshuTech. All Rights Reserved. | 
+                   <a href="#">Privacy Policy</a> | 
+                   <a href="#">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
